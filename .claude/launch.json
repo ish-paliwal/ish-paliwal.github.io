@@ -1,0 +1,21 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\ishan\\AppData\\Local\\Temp\\claude\\C--Users-ishan-projects-ish-paliwal-github-io\\acab013f-36af-488a-9c49-40860d22a194\\scratchpad\\serve.ps1",
+        "-Root",
+        "C:\\Users\\ishan\\projects\\ish-paliwal.github.io",
+        "-Port",
+        "5199"
+      ],
+      "port": 5199
+    }
+  ]
+}

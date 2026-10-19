@@ -5,7 +5,7 @@
 */
 window.SITE = {
   // Hero tag box (shown uppercase, after a "// ")
-  tagline: "ECE @ UT AUSTIN — [TAGLINE PLACEHOLDER: WHAT YOU BUILD, IN YOUR VOICE]",
+  tagline: "ECE @ UT AUSTIN — CREATING AT THE BOUNDARY BETWEEN HARDWARE DESIGN AND SOFTWARE ARCHITECTURE.",
 
   // Text shown in the terminal-style status line under the hero board
   statusDefault: "SELECT A COMPONENT TO ROUTE SIGNAL",
@@ -66,14 +66,14 @@ window.SITE = {
   // Shown as a bill of materials. prefix = reference designator letter.
   skills: [
     { group: "LANGUAGES", prefix: "L", items: ["[ADD SKILL]", "[ADD SKILL]", "[ADD SKILL]"] },
-    { group: "HARDWARE & EDA", prefix: "H", items: ["[ADD SKILL]", "[ADD SKILL]", "[ADD SKILL]"] },
+    { group: "HARDWARE & EDA", prefix: "H", items: ["PCB design", "Design validation", "Embedded systems", "FPGAs"] },
     { group: "LAB & TEST GEAR", prefix: "T", items: ["[ADD SKILL]", "[ADD SKILL]", "[ADD SKILL]"] },
     { group: "SOFTWARE & TOOLS", prefix: "S", items: ["[ADD SKILL]", "[ADD SKILL]", "[ADD SKILL]"] }
   ],
 
   about: {
     bio: [
-      "PLACEHOLDER — Two or three sentences about you, in your own voice. What you're studying, what you're drawn to, what you're working toward.",
+      "Hi, I'm Ishan, an Electrical and Computer Engineering student at UT Austin. I create at the boundary between hardware design and software architecture. I build systems engineered for speed, efficiency, and real-world impact: PCBs, design validation, embedded, FPGAs and more.",
       "PLACEHOLDER — Optional second paragraph: something personal that makes you more than a résumé."
     ],
     spec: [
@@ -86,9 +86,10 @@ window.SITE = {
   },
 
   contact: [
-    { label: "EMAIL",    text: "[YOU@EXAMPLE.COM]", href: "" },
+    { label: "EMAIL",    text: "ish.paliwal@gmail.com", href: "mailto:ish.paliwal@gmail.com" },
+    { label: "UT EMAIL", text: "ish.paliwal@utexas.edu", href: "mailto:ish.paliwal@utexas.edu" },
     { label: "GITHUB",   text: "GITHUB.COM/ISH-PALIWAL", href: "https://github.com/ish-paliwal" },
-    { label: "LINKEDIN", text: "[LINKEDIN.COM/IN/YOU]", href: "" },
+    { label: "LINKEDIN", text: "LINKEDIN.COM/IN/ISHAN-PALIWAL", href: "https://linkedin.com/in/ishan-paliwal/" },
     { label: "RESUME",   text: "[RESUME.PDF]", href: "" }
   ]
 };

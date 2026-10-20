@@ -80,7 +80,7 @@ window.SITE = {
       ["NAME", "Ishan Paliwal"],
       ["SCHOOL", "The University of Texas at Austin"],
       ["MAJOR", "Electrical & Computer Engineering"],
-      ["GRAD", "[20XX]"],
+      ["GRAD", "2030"],
       ["BASE", "Austin, TX"]
     ]
   },
@@ -90,6 +90,6 @@ window.SITE = {
     { label: "UT EMAIL", text: "ish.paliwal@utexas.edu", href: "mailto:ish.paliwal@utexas.edu" },
     { label: "GITHUB",   text: "GITHUB.COM/ISH-PALIWAL", href: "https://github.com/ish-paliwal" },
     { label: "LINKEDIN", text: "LINKEDIN.COM/IN/ISHAN-PALIWAL", href: "https://linkedin.com/in/ishan-paliwal/" },
-    { label: "RESUME",   text: "[RESUME.PDF]", href: "" }
+    { label: "RESUME",   text: "RESUME", href: "https://www.overleaf.com/read/nrcwpxstrpsr#07f22e" }
   ]
 };

@@ -74,7 +74,7 @@ window.SITE = {
   about: {
     bio: [
       "Hi, I'm Ishan, an Electrical and Computer Engineering student at UT Austin. I create at the boundary between hardware design and software architecture. I build systems engineered for speed, efficiency, and real-world impact: PCBs, design validation, embedded, FPGAs and more.",
-      "PLACEHOLDER — Optional second paragraph: something personal that makes you more than a résumé."
+      "In my free time I enjoy playing sports especially basketball and pickleball, exploring the outdoors, trying new food, and watching bollywood movies."
     ],
     spec: [
       ["NAME", "Ishan Paliwal"],

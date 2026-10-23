@@ -7,9 +7,6 @@ window.SITE = {
   // Hero tag box (shown uppercase, after a "// ")
   tagline: "ECE @ UT AUSTIN — CREATING AT THE BOUNDARY BETWEEN HARDWARE DESIGN AND SOFTWARE ARCHITECTURE.",
 
-  // Caption under the hero portrait
-  quote: "Hard work beats talent when talent doesn’t work hard.",
-
   projects: [
     {
       id: "PRJ-01",

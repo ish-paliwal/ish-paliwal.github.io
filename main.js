@@ -30,7 +30,6 @@
 
   /* ── hero ── */
   $('tagline').textContent = '// ' + S.tagline;
-  $('quote').textContent = '“' + S.quote + '”';
   $('bio').appendChild(frag(S.about.bio, function (t) { return h('p', { text: t }); }));
 
   // "View resume" button reuses the RESUME link from the contact list

@@ -140,7 +140,6 @@ ul, ol { list-style: none; }
   object-fit: cover; border-radius: 28px;
   border: 1px solid var(--ink);
 }
-.portrait figcaption { margin-top: 18px; font-size: 15px; line-height: 1.65; }
 
 .scroll-down {
   position: absolute; right: var(--gutter); bottom: 22px;

@@ -16,16 +16,31 @@
   }
   function $(id) { return document.getElementById(id); }
   function pad(n) { return String(n).padStart(2, '0'); }
-  function extLink(cls, label, href) {
-    var external = /^https?:/.test(href);
+  function isExternal(href) { return /^https?:/.test(href); }
+  function extLink(cls, href) {
     var a = h('a', { class: cls, href: href });
-    if (external) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+    if (isExternal(href)) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
     return a;
   }
+  function frag(list, fn) {
+    var f = document.createDocumentFragment();
+    list.forEach(function (x) { f.appendChild(fn(x)); });
+    return f;
+  }
 
-  /* ── content ── */
+  /* ── hero ── */
   $('tagline').textContent = '// ' + S.tagline;
+  $('bio').appendChild(frag(S.about.bio, function (t) { return h('p', { text: t }); }));
 
+  // "View resume" button reuses the RESUME link from the contact list
+  var resume = S.contact.filter(function (c) { return c.label === 'RESUME'; })[0];
+  if (resume && resume.href) {
+    var rb = $('resume-btn');
+    rb.href = resume.href;
+    if (isExternal(resume.href)) { rb.target = '_blank'; rb.rel = 'noopener noreferrer'; }
+  }
+
+  /* ── content sections ── */
   $('projects-list').appendChild(frag(S.projects, function (p) {
     return h('article', { class: 'card reveal' }, [
       h('div', { class: 'card-top' }, [h('span', { text: p.id }), h('span', { text: p.year })]),
@@ -34,7 +49,7 @@
       h('ul', { class: 'chips', 'aria-label': 'Tech stack' }, p.stack.map(function (s) { return h('li', { text: s }); })),
       h('div', { class: 'links' }, p.links.map(function (l) {
         if (!l.href) return h('span', { class: 'off', title: 'Link coming soon', text: l.label + ' (SOON)' });
-        var a = extLink('', l.label, l.href); a.textContent = l.label + ' ↗'; return a;
+        var a = extLink('', l.href); a.textContent = l.label + ' ↗'; return a;
       }))
     ]);
   }));
@@ -60,75 +75,16 @@
     ]);
   }));
 
-  $('bio').appendChild(frag(S.about.bio, function (t) { return h('p', { text: t }); }));
   $('spec').appendChild(frag(S.about.spec, function (r) {
     return h('div', {}, [h('dt', { text: r[0] }), h('dd', { text: r[1] })]);
   }));
   $('contact-list').appendChild(frag(S.contact, function (c) {
     if (!c.href) return h('div', { class: 'contact-row off' }, [h('span', { text: c.text }), h('small', { text: c.label + ' · SOON' })]);
-    var a = extLink('contact-row', c.text, c.href);
+    var a = extLink('contact-row', c.href);
     a.appendChild(h('span', { text: c.text }));
     a.appendChild(h('small', { text: c.label + ' ↗' }));
     return a;
   }));
-
-  function frag(list, fn) {
-    var f = document.createDocumentFragment();
-    list.forEach(function (x) { f.appendChild(fn(x)); });
-    return f;
-  }
-
-  /* ── legend under the board ── */
-  var legend = $('legend');
-  ['projects', 'experience', 'skills', 'contact'].forEach(function (k) {
-    var m = S.modules[k];
-    legend.appendChild(h('li', {}, [
-      h('a', { href: '#' + k, 'data-net': k }, [m.label, h('small', { text: m.ref })])
-    ]));
-  });
-
-  /* ── chip pins ── */
-  var NS = 'http://www.w3.org/2000/svg';
-  function range(a, b, s) { var o = []; for (var v = a; v <= b; v += s) o.push(v); return o; }
-  var CHIPS = {
-    u1: { x: 340, y: 220, w: 120, h: 120, l: range(235, 325, 15), r: range(235, 325, 15), t: range(355, 445, 15), b: range(355, 445, 15) },
-    u2: { x: 105, y: 75,  w: 110, h: 110, l: range(90, 170, 20),  r: range(90, 170, 20),  t: range(130, 190, 15), b: range(130, 190, 15) },
-    u3: { x: 575, y: 95,  w: 130, h: 70,  l: [110, 130, 150],     r: [110, 130, 150],     t: range(600, 680, 20), b: range(600, 680, 20) }
-  };
-  function pin(g, x, y, w, hgt) {
-    var r = document.createElementNS(NS, 'rect');
-    r.setAttribute('x', x); r.setAttribute('y', y); r.setAttribute('width', w); r.setAttribute('height', hgt);
-    r.setAttribute('fill', '#d6d6d6');
-    g.appendChild(r);
-  }
-  document.querySelectorAll('.pins').forEach(function (g) {
-    var c = CHIPS[g.getAttribute('data-chip')];
-    if (!c) return;
-    c.l.forEach(function (py) { pin(g, c.x - 14, py - 3.5, 14, 7); });
-    c.r.forEach(function (py) { pin(g, c.x + c.w, py - 3.5, 14, 7); });
-    c.t.forEach(function (px) { pin(g, px - 3.5, c.y - 14, 7, 14); });
-    c.b.forEach(function (px) { pin(g, px - 3.5, c.y + c.h, 7, 14); });
-  });
-
-  /* ── hover/focus: light up chip + trace + legend and update status line ── */
-  var status = $('status');
-  var base = '> ' + S.statusDefault;
-  function hot(net, on) {
-    document.querySelectorAll('[data-net="' + net + '"]').forEach(function (el) {
-      el.classList.toggle('is-hot', on);
-      // SVG <use> clones: classList works on SVG elements in modern browsers
-    });
-    var m = S.modules[net];
-    status.textContent = on && m ? '> ' + m.ref + ' → ' + m.label + ' :: ' + m.hint : base;
-  }
-  document.querySelectorAll('a[data-net]').forEach(function (a) {
-    var net = a.getAttribute('data-net');
-    a.addEventListener('mouseenter', function () { hot(net, true); });
-    a.addEventListener('mouseleave', function () { hot(net, false); });
-    a.addEventListener('focus', function () { hot(net, true); });
-    a.addEventListener('blur', function () { hot(net, false); });
-  });
-  status.textContent = base;
 
   /* ── clock (Austin) ── */
   function tick() {

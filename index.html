@@ -48,169 +48,22 @@
   </aside>
 
   <main>
-    <!-- HERO -->
+    <!-- HERO: name, tagline, intro, portrait -->
     <section class="hero" id="top" aria-label="Introduction">
-      <p class="meta meta-tl">COORD: 30.27N 97.74W<br>SECT: A-01</p>
-      <p class="meta meta-tr">SYS: ONLINE<br>VER: 1.0.0</p>
-
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <h1 class="name"><span>ISHAN</span><span>PALIWAL</span></h1>
-          <p class="tag" id="tagline">// ECE @ UT AUSTIN</p>
+          <p class="tagline" id="tagline"></p>
+          <div class="bio" id="bio"></div>
+          <div class="hero-cta">
+            <a class="btn btn--primary" href="#projects">VIEW PROJECTS</a>
+            <a class="btn" id="resume-btn" href="#contact">VIEW RESUME</a>
+          </div>
         </div>
 
-        <div class="board-wrap">
-          <svg class="board" viewBox="0 0 800 560" role="group" aria-label="Interactive circuit board. Each chip is a link to a section of this site.">
-            <defs>
-              <radialGradient id="mask" cx="50%" cy="45%" r="75%">
-                <stop offset="0" stop-color="#15893f"/>
-                <stop offset="1" stop-color="#0a5a28"/>
-              </radialGradient>
-              <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
-                <feGaussianBlur stdDeviation="2.2" result="b"/>
-                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-
-              <!-- Nav traces: CPU -> each module, 45° routing -->
-              <path id="p-projects"   pathLength="100" d="M326,250 H290 L255,215 V130 H229"/>
-              <path id="p-experience" pathLength="100" d="M474,250 H510 L545,215 V130 H561"/>
-              <path id="p-skills"     pathLength="100" d="M326,310 H290 L255,345 V430 H215"/>
-              <path id="p-contact"    pathLength="100" d="M474,310 H510 L545,345 V430 H570"/>
-
-              <g id="via"><circle r="6" fill="#e0b84a"/><circle r="2.6" fill="#073a1a"/></g>
-              <g id="res">
-                <rect x="-5" y="-12" width="10" height="24" fill="#1b1b1b"/>
-                <rect x="-5" y="-12" width="10" height="5" fill="#cfd2d6"/>
-                <rect x="-5" y="7" width="10" height="5" fill="#cfd2d6"/>
-              </g>
-              <g id="cap">
-                <rect x="-5" y="-12" width="10" height="24" fill="#b98a4e"/>
-                <rect x="-5" y="-12" width="10" height="5" fill="#cfd2d6"/>
-                <rect x="-5" y="7" width="10" height="5" fill="#cfd2d6"/>
-              </g>
-            </defs>
-
-            <!-- Board -->
-            <rect x="10" y="10" width="780" height="540" rx="16" fill="url(#mask)" stroke="#073a1a" stroke-width="3"/>
-            <rect x="26" y="26" width="748" height="508" rx="8" fill="none" stroke="#f2f2f2" stroke-opacity=".4" stroke-width="1.5"/>
-
-            <!-- Mounting holes -->
-            <g aria-hidden="true">
-              <g id="hole"><circle cx="50" cy="50" r="13" fill="#d8d8d8" stroke="#8d8d8d"/><circle cx="50" cy="50" r="6.5" fill="#052a14"/></g>
-              <use href="#hole" x="700"/>
-              <use href="#hole" y="460"/>
-              <use href="#hole" x="700" y="460"/>
-            </g>
-
-            <!-- Decorative traces -->
-            <g class="decor" aria-hidden="true">
-              <path class="trace trace--decor" pathLength="100" d="M370,206 V150 L340,120 V50 H160 V61"/>
-              <path class="trace trace--decor" pathLength="100" d="M430,206 V150 L460,120 V50 H640 V81"/>
-              <path class="trace trace--decor" pathLength="100" d="M370,354 V410 L340,440 V500 H160"/>
-              <path class="trace trace--decor" pathLength="100" d="M430,354 V410 L460,440 V500 H640"/>
-              <path class="trace trace--decor" pathLength="100" d="M140,199 V300 L120,320 V380"/>
-              <path class="trace trace--decor" pathLength="100" d="M660,179 V300 L680,320 V380"/>
-              <path class="trace trace--decor" pathLength="100" d="M355,206 V170 L395,130"/>
-              <path class="trace trace--decor" pathLength="100" d="M445,354 V400"/>
-              <path class="trace trace--decor" pathLength="100" d="M326,265 H300 L285,280 H100"/>
-              <path class="trace trace--decor" pathLength="100" d="M474,265 H500 L515,280 H700"/>
-            </g>
-
-            <!-- Nav traces -->
-            <g aria-hidden="true">
-              <use href="#p-projects"   class="trace trace--nav" data-net="projects"/>
-              <use href="#p-experience" class="trace trace--nav" data-net="experience"/>
-              <use href="#p-skills"     class="trace trace--nav" data-net="skills"/>
-              <use href="#p-contact"    class="trace trace--nav" data-net="contact"/>
-
-              <use href="#via" x="255" y="172"/>
-              <use href="#via" x="545" y="172"/>
-              <use href="#via" x="255" y="388"/>
-              <use href="#via" x="545" y="388"/>
-              <use href="#via" x="340" y="80"/>
-              <use href="#via" x="460" y="80"/>
-              <use href="#via" x="160" y="500"/>
-              <use href="#via" x="640" y="500"/>
-              <use href="#via" x="120" y="380"/>
-              <use href="#via" x="680" y="380"/>
-              <use href="#via" x="100" y="280"/>
-              <use href="#via" x="700" y="280"/>
-
-              <!-- Signal pulses -->
-              <use href="#p-projects"   class="pulse" data-net="projects"   style="--d:3.4s;--dl:0s"/>
-              <use href="#p-experience" class="pulse" data-net="experience" style="--d:3.8s;--dl:.6s"/>
-              <use href="#p-skills"     class="pulse" data-net="skills"     style="--d:3.6s;--dl:1.2s"/>
-              <use href="#p-contact"    class="pulse" data-net="contact"    style="--d:4s;--dl:1.8s"/>
-            </g>
-
-            <!-- Passives + LEDs (decorative) -->
-            <g aria-hidden="true">
-              <use href="#res" x="298" y="100"/><text class="silk" x="312" y="104">R1</text>
-              <use href="#cap" x="298" y="150"/><text class="silk" x="312" y="154">C1</text>
-              <use href="#res" x="502" y="100"/><text class="silk" x="516" y="104">R2</text>
-              <use href="#cap" x="502" y="150"/><text class="silk" x="516" y="154">C2</text>
-              <use href="#res" x="298" y="470"/><text class="silk" x="312" y="474">R3</text>
-              <use href="#cap" x="502" y="470"/><text class="silk" x="516" y="474">C3</text>
-
-              <rect class="led led--g" x="393" y="96" width="14" height="9" rx="2"/>
-              <text class="silk" x="400" y="86" text-anchor="middle">PWR</text>
-              <rect class="led led--r" x="393" y="455" width="14" height="9" rx="2"/>
-              <text class="silk" x="400" y="482" text-anchor="middle">ACT</text>
-
-              <text class="silk silk--lg" x="46" y="526">ISHAN PALIWAL // ECE // REV A</text>
-              <text class="silk silk--lg" x="754" y="526" text-anchor="end">AUSTIN, TX</text>
-            </g>
-
-            <!-- CPU (decorative centerpiece) -->
-            <g aria-hidden="true">
-              <g class="pins" data-chip="u1"></g>
-              <rect x="340" y="220" width="120" height="120" rx="4" fill="#151515" stroke="#3a3a3a" stroke-width="1.5"/>
-              <circle cx="353" cy="233" r="4" fill="#777"/>
-              <text class="chip-main" x="400" y="286" text-anchor="middle">IP-01</text>
-              <text class="chip-sub" x="400" y="306" text-anchor="middle">UT · ECE</text>
-            </g>
-
-            <!-- Modules (links) -->
-            <a class="mod" href="#projects" data-net="projects" aria-label="Projects section">
-              <rect class="ring" x="85" y="55" width="150" height="150" rx="8"/>
-              <g class="pins" data-chip="u2"></g>
-              <rect class="body" x="105" y="75" width="110" height="110" rx="4" fill="#151515" stroke="#3a3a3a" stroke-width="1.5"/>
-              <circle cx="117" cy="87" r="3.5" fill="#777"/>
-              <text class="mod-label" x="160" y="135" text-anchor="middle">PROJECTS</text>
-              <text class="mod-ref" x="160" y="153" text-anchor="middle">U2</text>
-            </a>
-
-            <a class="mod" href="#experience" data-net="experience" aria-label="Experience section">
-              <rect class="ring" x="555" y="75" width="170" height="110" rx="8"/>
-              <g class="pins" data-chip="u3"></g>
-              <rect class="body" x="575" y="95" width="130" height="70" rx="4" fill="#151515" stroke="#3a3a3a" stroke-width="1.5"/>
-              <circle cx="587" cy="107" r="3.5" fill="#777"/>
-              <text class="mod-label" x="640" y="135" text-anchor="middle">EXPERIENCE</text>
-              <text class="mod-ref" x="640" y="152" text-anchor="middle">U3</text>
-            </a>
-
-            <a class="mod" href="#skills" data-net="skills" aria-label="Skills section">
-              <rect class="ring" x="94" y="386" width="128" height="88" rx="8"/>
-              <rect x="103" y="420" width="15" height="20" fill="#e0b84a"/>
-              <rect x="200" y="420" width="15" height="20" fill="#e0b84a"/>
-              <rect class="body" x="118" y="398" width="82" height="64" rx="10" fill="#c9ccd1" stroke="#8b9097" stroke-width="1.5"/>
-              <text class="mod-label mod-label--dark" x="159" y="434" text-anchor="middle">SKILLS</text>
-              <text class="mod-ref mod-ref--dark" x="159" y="451" text-anchor="middle">Y1</text>
-            </a>
-
-            <a class="mod" href="#contact" data-net="contact" aria-label="Contact section">
-              <rect class="ring" x="562" y="384" width="156" height="92" rx="8"/>
-              <rect x="570" y="420" width="15" height="20" fill="#e0b84a"/>
-              <rect class="body" x="585" y="395" width="125" height="70" rx="3" fill="#c9ccd1" stroke="#8b9097" stroke-width="1.5"/>
-              <rect x="595" y="405" width="105" height="50" rx="2" fill="#161616"/>
-              <text class="mod-label" x="647" y="435" text-anchor="middle">CONTACT</text>
-              <text class="mod-ref" x="647" y="449" text-anchor="middle">J1</text>
-            </a>
-          </svg>
-
-          <ul class="legend" id="legend" aria-label="Section shortcuts"></ul>
-          <p class="status" aria-hidden="true"><span id="status">&gt; SELECT A COMPONENT TO ROUTE SIGNAL</span><span class="cursor">_</span></p>
-        </div>
+        <figure class="portrait">
+          <img src="media/portrait.jpg" width="1000" height="1191" alt="Ishan Paliwal smiling, wearing a navy suit jacket over a light blue collared shirt" fetchpriority="high">
+        </figure>
       </div>
 
       <a class="scroll-down" href="#projects" aria-label="Scroll to projects">SCROLL_DOWN <span aria-hidden="true"></span></a>
@@ -262,7 +115,6 @@
         </header>
         <div class="about-grid">
           <div class="about-l reveal">
-            <div class="bio" id="bio"></div>
             <dl class="spec" id="spec"></dl>
           </div>
           <div class="about-r reveal" id="contact">
@@ -276,7 +128,8 @@
 
   <footer class="footer">
     <div class="wrap footer-row">
-      <p>© <span id="year">2026</span> ISHAN PALIWAL // ROUTED BY HAND</p>
+      <p>© <span id="year">2026</span> ISHAN PALIWAL</p>
+      <p class="footer-credit">Built with Claude</p>
       <a href="#top">BACK TO TOP ↑</a>
     </div>
   </footer>

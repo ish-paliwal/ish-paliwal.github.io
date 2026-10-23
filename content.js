@@ -7,15 +7,6 @@ window.SITE = {
   // Hero tag box (shown uppercase, after a "// ")
   tagline: "ECE @ UT AUSTIN — CREATING AT THE BOUNDARY BETWEEN HARDWARE DESIGN AND SOFTWARE ARCHITECTURE.",
 
-  // Text shown in the terminal-style status line under the hero board
-  statusDefault: "SELECT A COMPONENT TO ROUTE SIGNAL",
-  modules: {
-    projects:   { ref: "U2", label: "PROJECTS",   hint: "builds, prototypes, and experiments" },
-    experience: { ref: "U3", label: "EXPERIENCE", hint: "internships, research, and leadership" },
-    skills:     { ref: "Y1", label: "SKILLS",     hint: "languages, tools, and lab gear" },
-    contact:    { ref: "J1", label: "CONTACT",    hint: "say hi, send some signal" }
-  },
-
   projects: [
     {
       id: "PRJ-01",

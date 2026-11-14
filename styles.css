@@ -6,8 +6,8 @@
   --grid: rgba(10, 10, 10, .07);
   --accent: #0b6b2f;
 
-  --display: 'Anton', Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
-  --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  --display: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --mono: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
   --gutter: clamp(20px, 4vw, 56px);
   --header-h: 56px;
@@ -74,8 +74,8 @@ ul, ol { list-style: none; }
 
 .hero-copy { border-left: 3px solid var(--ink); padding-left: clamp(14px, 2vw, 28px); }
 .name {
-  font-family: var(--display); font-weight: 400; text-transform: uppercase;
-  font-size: clamp(72px, 15vw, 210px); line-height: .88; letter-spacing: -.005em;
+  font-family: var(--display); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(56px, 15vw, 210px); line-height: .9; letter-spacing: -.035em;
 }
 @media (min-width: 960px) { .name { font-size: clamp(88px, 11.5vw, 190px); } }
 .name span { display: block; }
@@ -124,8 +124,8 @@ ul, ol { list-style: none; }
 .sec-head { display: grid; gap: 6px; margin-bottom: clamp(32px, 5vw, 64px); }
 .sec-meta, .sec-count { font-size: 11px; letter-spacing: .1em; color: var(--muted); }
 .sec-head h2 {
-  font-family: var(--display); font-weight: 400; text-transform: uppercase;
-  font-size: clamp(56px, 11vw, 150px); line-height: .9; padding-left: clamp(12px, 1.6vw, 24px); border-left: 3px solid var(--ink);
+  font-family: var(--display); font-weight: 800; text-transform: uppercase;
+  font-size: clamp(36px, 9.5vw, 150px); line-height: .95; letter-spacing: -.035em; padding-left: clamp(12px, 1.6vw, 24px); border-left: 3px solid var(--ink);
 }
 
 /* Projects */
@@ -137,7 +137,7 @@ ul, ol { list-style: none; }
 }
 .card:hover { transform: translate(-4px, -4px); box-shadow: 6px 6px 0 var(--ink); }
 .card-top { display: flex; justify-content: space-between; font-size: 11px; letter-spacing: .1em; color: var(--muted); }
-.card h3 { font-family: var(--display); font-weight: 400; font-size: clamp(30px, 3vw, 40px); line-height: 1; text-transform: uppercase; }
+.card h3 { font-family: var(--display); font-weight: 800; font-size: clamp(30px, 3vw, 40px); line-height: 1; text-transform: uppercase; }
 .card p { flex: 1; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chips li { padding: 3px 8px; border: 1px solid var(--ink); font-size: 11px; letter-spacing: .04em; }
@@ -172,7 +172,7 @@ ul, ol { list-style: none; }
 .spec div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--ink); }
 .spec dt { font-size: 11px; letter-spacing: .1em; color: var(--muted); padding-top: 2px; }
 .spec dd { font-weight: 500; }
-.sub-h { font-family: var(--display); font-weight: 400; font-size: clamp(32px, 4vw, 48px); margin-bottom: 20px; }
+.sub-h { font-family: var(--display); font-weight: 800; font-size: clamp(32px, 4vw, 48px); margin-bottom: 20px; }
 .contact-list { border-top: 1px solid var(--ink); }
 .contact-row {
   display: flex; justify-content: space-between; align-items: center; gap: 16px;

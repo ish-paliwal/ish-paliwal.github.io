@@ -53,7 +53,6 @@
       }))
     ]);
   }));
-  $('count-projects').textContent = pad(S.projects.length) + ' ITEMS';
 
   $('experience-list').appendChild(frag(S.experience, function (e) {
     return h('article', { class: 'job reveal' }, [
@@ -64,7 +63,6 @@
       ])
     ]);
   }));
-  $('count-experience').textContent = pad(S.experience.length) + ' ENTRIES';
 
   $('skills-list').appendChild(frag(S.skills, function (g) {
     return h('section', { class: 'bom reveal' }, [

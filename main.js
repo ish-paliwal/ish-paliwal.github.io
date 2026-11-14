@@ -86,27 +86,7 @@
     return a;
   }));
 
-  /* ── clock (Austin) ── */
-  function tick() {
-    $('clock').textContent = new Date().toLocaleTimeString('en-US', { timeZone: 'America/Chicago', hour: 'numeric', minute: '2-digit' });
-  }
-  tick(); setInterval(tick, 30000);
   $('year').textContent = new Date().getFullYear();
-
-  /* ── theme ── */
-  $('theme').addEventListener('click', function () {
-    var next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-    document.documentElement.dataset.theme = next;
-    var meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.content = next === 'dark' ? '#0b0d0c' : '#f3f2ee';
-    try { localStorage.setItem('theme', next); } catch (e) {}
-  });
-
-  /* ── scroll meter ── */
-  var sy = $('scrollY'), queued = false;
-  function updateScroll() { queued = false; sy.textContent = String(Math.round(window.scrollY)).padStart(3, '0'); }
-  addEventListener('scroll', function () { if (!queued) { queued = true; requestAnimationFrame(updateScroll); } }, { passive: true });
-  updateScroll();
 
   /* ── reveal on scroll ── */
   var items = document.querySelectorAll('.reveal');

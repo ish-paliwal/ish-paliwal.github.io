@@ -36,20 +36,13 @@ window.SITE = {
 
   experience: [
     {
-      dates: "[MON 20XX] — [PRESENT]",
-      role: "[ROLE TITLE]",
-      org: "[ORGANIZATION]",
+      dates: "JUN 2026 — AUG 2026",
+      role: "Laboratory Assistant",
+      org: "Newpark Drilling Fluids",
       bullets: [
-        "PLACEHOLDER — What you did, with a number if you have one.",
-        "PLACEHOLDER — What changed because you did it."
-      ]
-    },
-    {
-      dates: "[MON 20XX] — [MON 20XX]",
-      role: "[ROLE TITLE]",
-      org: "[ORGANIZATION]",
-      bullets: [
-        "PLACEHOLDER — What you did, with a number if you have one."
+        "Designed a data visualization tool for 5 scientists by standardizing an Excel data-entry template with VBA, connecting it to an auto-refreshing Power BI dashboard through Power Query, and reducing manual data processing and analysis from 1 hour to under 20 minutes.",
+        "Developed a self-service macro-enabled Excel template for specialized laboratory testing equipment that converts raw instrument output into report-ready charts and summary tables; adopted by all 5 technicians and reduced reporting time from 20 to 5 minutes.",
+        "Led the redesign of laboratory chemical inventory for 1,000+ chemicals by standardizing identification and color-coded storage systems, eliminating mislabeling errors."
       ]
     }
   ],

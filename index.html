@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,29 +9,16 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230f7a3a'/%3E%3Crect x='9' y='9' width='14' height='14' fill='%23151515'/%3E%3Cg fill='%23e0b84a'%3E%3Crect x='11' y='4' width='2' height='5'/%3E%3Crect x='19' y='4' width='2' height='5'/%3E%3Crect x='11' y='23' width='2' height='5'/%3E%3Crect x='19' y='23' width='2' height='5'/%3E%3C/g%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
-    // Set theme before first paint to avoid a flash.
     document.documentElement.classList.add('js');
-    try {
-      var t = localStorage.getItem('theme');
-      if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      document.documentElement.dataset.theme = t;
-    } catch (e) {}
   </script>
 </head>
 <body>
   <a class="skip" href="#projects">Skip to content</a>
 
   <header class="topbar">
-    <div class="topbar-l">
-      <span class="clock" aria-label="Current time in Austin"><span class="clock-dot" aria-hidden="true"></span>AUS <time id="clock">--:--</time></span>
-      <button class="theme-btn" id="theme" type="button" aria-label="Toggle dark mode">
-        <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
-        <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-      </button>
-    </div>
     <nav class="topnav" aria-label="Sections">
       <a href="#projects">PROJECTS</a>
       <a href="#experience">EXPERIENCE</a>
@@ -40,12 +27,6 @@
       <a href="#contact">CONTACT</a>
     </nav>
   </header>
-
-  <aside class="scrollmeter" aria-hidden="true">
-    <span class="scrollmeter-label">SCROLL_Y</span>
-    <span class="scrollmeter-line"></span>
-    <span class="scrollmeter-val" id="scrollY">000</span>
-  </aside>
 
   <main>
     <!-- HERO: name, tagline, intro, portrait -->
@@ -75,7 +56,6 @@
         <header class="sec-head reveal">
           <p class="sec-meta">SECT: A-02 // NET: PROJECTS</p>
           <h2 id="h-projects">PROJECTS</h2>
-          <p class="sec-count" id="count-projects"></p>
         </header>
         <div class="cards" id="projects-list"></div>
       </div>
@@ -87,7 +67,6 @@
         <header class="sec-head reveal">
           <p class="sec-meta">SECT: A-03 // NET: EXPERIENCE</p>
           <h2 id="h-experience">EXPERIENCE</h2>
-          <p class="sec-count" id="count-experience"></p>
         </header>
         <div class="timeline" id="experience-list"></div>
       </div>
@@ -99,7 +78,6 @@
         <header class="sec-head reveal">
           <p class="sec-meta">SECT: A-04 // NET: SKILLS</p>
           <h2 id="h-skills">SKILLS</h2>
-          <p class="sec-count">BILL OF MATERIALS</p>
         </header>
         <div class="bom-grid" id="skills-list"></div>
       </div>
@@ -111,7 +89,6 @@
         <header class="sec-head reveal">
           <p class="sec-meta">SECT: A-05 // NET: ABOUT + CONTACT</p>
           <h2 id="h-about">ABOUT</h2>
-          <p class="sec-count">DATASHEET REV A</p>
         </header>
         <div class="about-grid">
           <div class="about-l reveal">
